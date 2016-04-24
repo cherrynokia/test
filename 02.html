@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        
+        .box{
+            width:200px;
+            height:80px;
+            float:left;
+            margin: 1em; 
+            background-color: #efe;
+            font-family:'Noto Sans TC', sans-serif;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        .after-box{
+            clear:both;
+            background-color: #fef;
+            margin: 2em;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        img{
+            float:right;
+        }
+        
+     
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            zoom:1;    
+        }
+       .box2{
+            background-color: #fee;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box"> 一個人的旅行</div>
+    <div class="after-box"> 
+    自助旅遊會發生很多意外的驚喜,走在路上說不定會聽到台灣的語言,在餐館也許吃到台灣特有的食物,在異地旅行的一個人,眼前看到的都是景象有時也會希望有朋友在身邊可以分享其中的喜樂或其他感受,出遠遊能夠讓人更知道自己想要什麼生活,又喜歡跟什麼人相處,漸漸地你會發現不一樣的自己,相對地也會拋出對自己更多的疑問!
+    </div>
+    
+    <img src="02.jpg" width="300 px" alt="人物">
+    <div class= "clearfix" "box2" > 這是我跟朋友一起去旅遊的照片,爽朗的午後定眼看著某一幅畫,不須言語了然於</div>
+    <div> 為什麼上一層沒辦法出現底色??@@我要粉膚色辣~~~ </div>
+    
+</body>
+</html>
