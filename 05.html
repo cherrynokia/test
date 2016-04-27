@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+    <style>
+        li,ul,p,h1,h2,h3,h4,h5,h6,p,body{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:1000px;
+            height:500px;
+            position:relative;
+            background-color: burlywood;
+            margin-top:150px;
+            margin:auto;
+            
+        }
+        nav{
+            width:100px;
+            position:absolute;
+            right:50px;
+            top:100px;
+            background-color:beige;
+            
+            
+        }
+        
+        
+        nav li{
+            list-style: none;
+            font-size: 18px;
+            color:blueviolet;
+            line-height: 1.5;
+            margin:auto;
+            text-align:center;
+            padding:10px;
+            transition:all .3s;
+            
+        }
+        nav a{
+            text-decoration: none;
+            text-align:center;
+            transition:all .3s;
+        }
+        nav a:hover{
+            color:aliceblue;
+        }
+        nav li:hover {
+            display:block;
+            background-color: #919191;
+        }
+        
+        .run{
+            position:absolute;
+            right:160px;
+            top:100px;
+            width:800px;
+            height:141px;
+            background:#000;
+            overflow:hidden;
+        }
+        .box{
+            font-family: sans-serif;
+            font-size:19px;
+            background:#000;
+            color:aliceblue;
+        }
+        #box2{
+            background-size:cover;
+            background-position:center;
+            display:block;
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+   <div class="container">
+    <nav>
+        <ul>
+            <li><a href="#">關於我</a></li>
+            <li><a href=" #">更多資訊</a></li>
+            <li><a href="#">聯絡我們</a></li>
+        </ul>
+        
+    </nav>
+        <div class="run" id="runa">
+            <marquee direction="left"  scrollamount="8" class="box">
+        
+                花囉您好阿~很高興您進入這個網頁~這個是自己慢慢練習的第五個網頁~很多都還需要學習~希望每天都能學到一點新技能~然後從中可以得到成就感和樂趣~
+                
+                
+            </marquee>
+        <div id="box2">
+            <img src="01.jpg" alt="">
+        </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
