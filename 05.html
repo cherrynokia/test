@@ -10,7 +10,7 @@
         }
         .container{
             width:1000px;
-            height:1500px;
+            height:500px;
             position:relative;
             background-color: burlywood;
             margin-top:150px;
@@ -68,106 +68,9 @@
             color:aliceblue;
         }
         #box2{
-            width:800px;
-            height:141px;;
             background-size:cover;
             background-position:center;
-        }
-        
-        .fixed{
-            width:900px;
-            margin:auto;
-        }
-        
-        h3{
-            margin-top: 300px;
-            margin-right: 200px;
-            position:absolute;
-            width:500px;
-            height:100px;
-            line-height: 150%
-            
-            }
-            
-        
-        
-    
-        .gallery{
-            margin-top: 500px;
-            position:absolute;
-            width:300px;
-            height:250px;
-            overflow:hidden;
-        }
-        .gallery img{
-            width:150%;
-            position:absolute;
-        }
-        .gallery .mask{
-            position:absolute;
-            width:150px;
-            height:125px;
-            background-color: rgba(0,0,0,0);
-            transition: all .3s;
-            
-        }
-        .gallery:hover .mask{
-            position:absolute;
-            width:300px;
-            height:250px;
-            background-color: rgba(0,0,0,.5);
-        }
-        
-        .gallery .mask a{
-            font-size: 20px;
-            line-height: 250px;
-            text-align: center;
-            text-decoration:none;
-            display: block;
-            color:rgba(255,255,255,0);
-            transition: all .3s;
-        }
-        .gallery:hover .mask a{
-            font-size: 20px;
-            line-height: 250px;
-            text-align: center;
-            text-decoration:none;
-            color:rgba(255,255,255,1);
-        }
-        
-        .img1{
-            left:0;
-        }
-        
-        .img2{
-            left:350px;
-        }
-        
-        .img3{
-            right:0;
-        }
-       
-        .map{
-            margin-top: 800px;
-            position:absolute;
-            left:0;
-        }
-        .word{
-            margin-top: 900px;
-            position:absolute;
-            right:50px;
-            line-height: 2;
-            color:chocolate;
-            font-size: 16px;
-            text-align:right;
-        }
-    
-        #footer {
-            width: 1200px;
-           
-            
-            text-align:center;
-        
+            display:block;
         }
         
     </style>
@@ -175,7 +78,6 @@
     
 </head>
 <body>
-  
    <div class="container">
     <nav>
         <ul>
@@ -185,75 +87,18 @@
         </ul>
         
     </nav>
-        <div class="run" id="box2">
+        <div class="run" id="runa">
             <marquee direction="left"  scrollamount="8" class="box">
         
                 花囉您好阿~很高興您進入這個網頁~這個是自己慢慢練習的第五個網頁~很多都還需要學習~希望每天都能學到一點新技能~然後從中可以得到成就感和樂趣~
                 
                 
             </marquee>
-        <img src="01.jpg" alt="" width="800px" height="141px" >
-       </div>
-        
-        <h3 style='writing-mode: vertical-rl '>每天晚上在K書~寫CODE邊找資料然後自己做,不會的就問線上朋友,每次都能
-        得到滿意的答覆,這個過程真的有夠給它勞心勞苦的~假設我有基本的設計網頁的底子~
-        希望能做到我喜歡而且別人看的也覺得不錯的網站</h3>
-        
-        <div class="fixed">
-           
-            <div class="gallery img1" >
-               <img src="05-1.jpg" alt="">
-               <div class="mask">
-                   <a href="#">MORE</a>
-                </div>
-            
-            </div>
-             <div class="gallery img2"  >
-               <img src="05-2.jpg" alt="">
-               <div class="mask">
-                   <a href="#">MORE</a>
-                </div>
-            
-            </div>
-             <div  class="gallery img3" >
-               <img src="05-3.jpg" alt="">
-               <div class="mask">
-                   <a href="#">MORE</a>
-                </div>
-            
-            </div>
-            
-            <div class="map">
-            <hr>
-                <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1916.5874622057522!2d121.17152074212103!3d24.930864039954926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc24080034849b3e3!2z6KGM5pS_6Zmi6Z2S5bm06LyU5bCO5aeU5ZOh5pyD6Z2S5bm06IG35qWt6KiT57e05Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1462151316809" 
-                 width="600" 
-                 height="400" frameborder="0" style="border:0" allowfullscreen>
-              
-                  </iframe>    
-   
-             <hr>
-            </div>
-            <div class="word" >
-                在這裡的小日常~<br>
-                每天早上被鬧鐘吵醒~<br>
-                被一大堆事情追著跑~<br>
-                被身體的呢喃提醒多休息~<br>
-                跟著室友一起散步吃飯~<br>
-                每天的意義都是被堆疊起來的~<br>
-                停下腳步也許是另外一種生活方式~<br>
-                105.05.02<br>
-            </div>
+        <div id="box2">
+            <img src="01.jpg" alt="">
         </div>
-        
-    </div>
-   
-    <div id="footer" >
-       <div class="copyright">
-           <p>
-            2016 &copy; cherrynokia 
-          </p>
-       </div>
+            
+        </div>
     </div>
     
 </body>
