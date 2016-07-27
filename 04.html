@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04</title>
+    <style>
+        
+        
+        form{
+            width:300px;
+            margin: auto;
+        }
+        nav{
+            margin: auto;
+            background-color: black;
+        } 
+        
+        .full{
+            width:1200px;
+            margin:auto;
+        }
+        
+        .clearfix::after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        nav ul {
+            margin:0;
+            padding: 0;
+            float:right;
+            
+        }
+        nav li{
+            list-style: none;
+            color: antiquewhite;
+            float:left;
+            
+        }
+        
+        nav a {
+            color:aliceblue;
+            text-decoration: none;
+            float:left;
+            display:block;
+            width:80px;
+            height:30px;
+            line-height:30px;
+            text-align: center;
+            background-color:orange;
+            transition:all , 3s;
+            margin-right:5px;
+        }
+        
+        .fixe{
+            width:1200px;
+            margin:auto;
+        }
+        nav a:hover{ 
+            background-color: #fff;
+            display:block;
+            color:black;
+        }
+        
+        h2{
+            width:1200px;
+            margin:auto;
+        }
+        
+    </style>
+    
+</head>
+<body>
+      
+    <nav class="full clearfix"> 
+        <div class="fixed">
+           <div><img src="04-3.png" alt="logo" width="10%" ></div>
+          <ul >
+              <li><a href=" ">首頁</a></li>
+              <li><a href=" ">免費諮詢</a></li>
+              <li><a href=" ">聯絡我們</a></li>        
+          </ul>  
+        </div>
+    </nav>
+       <br>
+       <br>
+    <h2 align="center" > 申請帳號請填寫以下資料 </h2>
+   
+    <div ><form  action="http://www.example.com/upload.php" method="post"> 
+      <fieldset>
+         <legend>個人基本資料</legend>
+        <label for="username">帳號:</label>
+        <input id="username" name="username" / >
+        <br>
+        <br>
+        <label for="password">密碼:</label>
+        <input id="password" name="password" / >
+       <p>
+         大名:  
+       </p>
+        <input type="text"  name="name" value="name">
+        <br>
+     
+        <p>
+         生日:  
+       </p>
+        <input type="text"  name="birthday" value="birthday">
+        <br>
+       
+        <p>性別:</p>
+        <input id="female" type="radio" name="gender" value="f" />
+        <label for="female">女生</label>
+        
+        <input id="male" type="radio" name="gender" value="m">
+        <label for="male">男生</label>
+        <br>
+
+        <p>使用哪一牌手機</p>
+        <select name="cellphone">
+           <option value="ios" name="ios">蘋果</option>
+           <option value="三星" name="三星">三星</option>
+           <option value="htc" name="htc">htc</option>
+           <option value="sony" name="sony">sony</option>
+           </select>
+           <br>
+           <p>從哪裡得知我們的資訊</p>
+           <input type="checkbox" name="friend" value="friend" />朋友
+           <input type="checkbox" name="ie" value="ie" />網路
+           <input type="checkbox" name="maga" value="maga" />報章雜誌
+      </fieldset>
+      <br>
+
+       <input type="image" src="04.png" width="100" height="30">
+
+    </form>
+   </div>
+</body>
+</html>
