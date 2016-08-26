@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0520練習網頁</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- 最新編譯和最佳化的 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- 選擇性佈景主題 外觀 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(http://fonts.gstatic.com/s/lato/v11/AcvTq8Q0lyKKNxRlL28RnxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(http://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        
+        body,
+        h1,
+        h2,
+        h3,
+        p {
+            font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        .navbar {
+            margin-bottom: 0!important;
+        }
+        
+        header {
+            background: url("http://blackrockdigital.github.io/startbootstrap-landing-page/img/intro-bg.jpg");
+            background-size: cover;
+            height: 700px;
+            text-align: center;
+            padding-top: 300px;
+            padding-bottom: 50px;
+        }
+        
+        header h1 {
+            margin-top: 50px;
+            color: aliceblue;
+            font-size: 60px;
+        }
+        
+        header p {
+            font-size: 25px;
+            color: aliceblue;
+        }
+        
+        header hr {
+            width: 400px;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        #btn button {
+            font-size: 14px;
+            padding-bottom: -2px;
+            padding-left: -2px;
+            padding-top: -2px;
+            padding-right: -2px;
+            margin-bottom: 3px;
+            margin-left: 3px;
+            margin-right: 3px;
+            margin-top: 3px;
+        }
+        
+        .content-section {
+            padding: 50px 0;
+            background-color: #f8f8f8;
+        }
+        
+        .content-section2 {
+            padding: 50px 0;
+        }
+        
+        .banner-section {
+            padding: 20px;
+        }
+        
+        .banner {
+            padding: 100px;
+            background-position: center;
+            background-image: url("banner-bg.jpg");
+            background-size: cover;
+        }
+        
+        #footer button {
+            padding-bottom: -8px;
+            padding-top: -8px;
+            padding-right: -8px;
+            padding-left: -8px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
+        #footer h1 {
+            color: aliceblue;
+        }
+        
+        #link li {
+            display: inline-block;
+            text-decoration: none;
+            float: left;
+            padding: 5px;
+        }
+        
+        #copy {
+            font-size: 12px;
+            margin-left: 45px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+    <header>
+        <h1> Landing Page</h1>
+        <p>A Template by Start Bootstrap</p>
+        <hr/>
+        <div class="list-button">
+            <div id="btn">
+                <!--
+                <li>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                </li>
+                   <li>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                </li>
+-->
+
+                <button type="button" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>TWITTER</button>
+                <button type="button" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i>GITHUB</button>
+                <button type="button" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i>LINKEDIN</button>
+
+
+            </div>
+        </div>
+    </header>
+    <div class="content-section">
+        <div class="continaer">
+            <div class="row">
+
+                <div class="col-md-4 col-md-offset-1 col-sm-6">
+                    <hr>
+                    <h1>Death to the Stock Photo:<br>Special Thanks</h1>
+                    <p>
+                        A special thanks to <a href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>for providing the photographs that you see in this template. Visit their website to become a member.
+                    </p>
+
+                </div>
+                <div class="col-md-4 col-md-offset-1 col-sm-6"> <img class="img-responsive" src="ipad.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <img src="dog.png" alt="">
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <hr>
+                    <h1>3D Device Mockupsby PSDCovers</h1>
+                    <p>
+                        Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content-section">
+        <div class="continaer">
+            <div class="row">
+
+                <div class="col-md-5 col-md-offset-1 col-sm-6">
+                    <hr>
+                    <h1>Google Web Fonts and Font Awesome Icons</h1>
+                    <p>
+                        This template features the 'Lato' font, part of the Google Web Font library, as well as icons from Font Awesome.
+                    </p>
+
+                </div>
+                <div class="col-md-4 col-md-offset-1 col-sm-6"> <img class="img-responsive" src="phones.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-section">
+        <div class="banner">
+            <div class="row">
+                <div class="row" id="footer">
+                    <div class="col-md-6  col-sm-6">
+                        <h1>Connect to Start Bootstrap: </h1>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <button type="button" class="btn btn-default"><i class="fa fa-twitter"></i> TWITTER</button>
+                        <button type="button" class="btn btn-default"><i class="fa fa-github"></i> GITHUB</button>
+                        <button type="button" class="btn btn-default"> <i class="fa fa-linkedin"></i>LINKEDN</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content-section2">
+        <div id="link">
+            <br>
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li>⋅</li>
+                <li> <a href="">About</a></li>
+                <li>⋅</li>
+                <li><a href="">Services</a></li>
+                <li>⋅</li>
+                <li><a href="">Contact</a> </li>
+            </ul>
+            <br>
+
+            <p id="copy">Copyright © Your Company 2014. All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+
+</html>
