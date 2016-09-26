@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        content {
+            background-image: url(images/bg-banner.jpg);
+            /*            background-position: center top;*/
+            background-repeat: no-repeat;
+            position: relative;
+            top: 0px;
+            display: inline-block;
+            height: 266px;
+            width: 100%;
+            margin: auto;
+            background-position: center top;
+        }
+        
+        @media screen and (max-width: 1000px) and (min-width: 200px) {
+            .searchwrap {
+                margin-top: 150px;
+                margin-right: 100px;
+            }
+            content {
+                display: none;
+            }
+        }
+        
+        .searchwrap {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 281px;
+        }
+        
+        body,
+        li,
+        p,
+        h2,
+        h3,
+        div,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #000;
+        }
+        
+        .header {
+            position: relative;
+            background: url(images/bg-body.jpg);
+            height: 288px;
+        }
+        
+        .search {
+            background-color: #280000;
+            font-size: 16px;
+            border: 1px solid #7C0000;
+            width: 191px;
+            margin-right: 16px;
+            display: inline-block;
+            /* height: 93px; */
+            vertical-align: super;
+            color: aliceblue;
+        }
+        
+        .follow {
+            border: 1px 0px 1px 0ox solid;
+        }
+        
+        .nav {
+            position: absolute;
+            bottom: 0;
+            right: 12%;
+            margin-bottom: -9px;
+        }
+        
+        .nav li {
+            width: 150px;
+            list-style: none;
+            display: inline;
+            line-height: 17px;
+            text-align: center;
+        }
+        
+        .nav a {
+            display: inline-block;
+            float: left;
+            background-image: url(images/bg-main-navigation.png);
+            color: aliceblue;
+            width: 100px;
+            font-size: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-repeat: no-repeat;
+            padding-top: 10px;
+            padding-right: 8px;
+            padding-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: "";
+            clear: both;
+            height: 0;
+        }
+        
+        .outer {
+            position: absolute;
+            width: 603px;
+            overflow: hidden;
+            left: 27%;
+        }
+        
+        .prev {
+            position: absolute;
+            right: 5%;
+            left: 20%;
+            bottom: 6%;
+            cursor: pointer;
+        }
+        
+        .pos {
+            position: relative;
+            /* width: 617px; */
+            /* right: 5%; */
+            /* left: 7%; */
+            width: 3176px;
+        }
+        
+        .bg {
+            position: relative;
+            display: inline;
+            border: 1px solid wheat;
+            width: 630px;
+            /*            height: 330px;*/
+        }
+        
+        .next {
+            position: absolute;
+            right: 17%;
+            bottom: 6%;
+            cursor: pointer;
+        }
+        
+        .post {
+            position: absolute;
+            top: 5%;
+            right: 18%;
+            background-image: url(images/bg-bubble.png);
+            background-repeat: no-repeat;
+            z-index: 9;
+            height: 212px;
+            width: 282px;
+        }
+        
+        .post h2 {
+            margin-bottom: 5%;
+            text-align: right;
+            margin-right: 6%;
+            margin-top: 5%;
+        }
+        
+        .post p {
+            padding-right: 17px;
+            font-size: 15px;
+            height: 67px;
+            /* padding-left: 30px; */
+            overflow: hidden;
+            text-align: right;
+            color: #1B1B1B;
+            display: inline-block;
+        }
+        
+        .post h3 {
+            display: inline-block;
+            right: -12%;
+            z-index: 99;
+            vertical-align: super;
+            font-size: 26px;
+            position: relative;
+        }
+        
+        main {
+            width: 71%;
+            margin: auto;
+            background-color: white;
+        }
+        
+        .mainContent {
+            display: inline-block;
+            float: left;
+            position: relative;
+            left: 2em;
+            width: 27em;
+            margin: 1em 0px;
+        }
+        
+        .clearfix {
+            clear: both;
+            content: "";
+        }
+        
+        .bottomText {
+            position: absolute;
+        }
+        
+        .mainText {
+            position: absolute;
+            right: -3px;
+            bottom: 0;
+        }
+        
+        .mainContent p {
+            position: absolute;
+            background-color: white;
+            border: 1px solid orange;
+            font-size: 11px;
+            text-align: left;
+            bottom: 0%;
+        }
+        
+        .bottomText {
+            width: 19em;
+            background-color: orange;
+            height: 2em;
+            color: white;
+            position: absolute;
+            bottom: 0.5em;
+        }
+        
+        h4 {
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            right: 2em;
+            width: 11em;
+            bottom: 5em;
+            z-index: 9;
+        }
+        /*        footer*/
+        
+        footer {
+            position: relative;
+            width: 100%;
+            color: aliceblue;
+            background: url(./images/bg-footer.jpg);
+            text-align: center;
+        }
+        
+        .footer_pages_content ul {
+            list-style: none;
+        }
+        
+        .footer_pages_content ul li {
+            cursor: pointer;
+        }
+        
+        .footer_pages_content ul li:hover {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var slider_count = 0;
+            $('.next').click(function () {
+                slider_count++;
+                if (slider_count == 5) {
+                    slider_count = 0;
+                }
+                $('.bg').animate({
+                    left: '-' + slider_count * 640 + 'px'
+
+                });
+                console.log("a")
+            });
+            $('.prev').click(function () {
+                slider_count--;
+                if (slider_count == -1) {
+                    slider_count = 4;
+                }
+                $('.bg').animate({
+                    left: '-' + slider_count * 640 + 'px'
+
+                });
+                console.log("b")
+
+            });
+            $('.footer_pages_content ul li').hover(function () {
+                $(this).find('img').css('display', 'inline');
+            }, function () {
+                $(this).find('img').css('display', 'none');
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div><img src="images/logo.png" alt="" style='position:absolute; left:23%;    top: 10%;'>
+            </div>
+            <!--            header右上角-->
+            <div class='searchwrap'>
+                <!--               search-->
+                <form action="#">
+                    <input type='text' class="search" value="searching?">
+                    <a href="#"><img src="images/search-btn.png" style='display:inline-block;' alt="">
+                    </a>
+                </form>
+                <!--                follow-->
+                <div>
+                    <p class='follow' style='display: inline-block;color:white;    margin-left: 36%;'>FOOLOW US</p>
+                    <a href="">
+
+                        <img style='display:inline;' src="images/icons/facebook_16.png" alt="">
+
+
+                    </a>
+                    <a href="">
+                        <img style='inline;' src="images/icons/rss_16.png" alt="">
+                    </a>
+                    <a href="">
+                        <img style='inline;' src="images/icons/technorati_16.png" alt="">
+                    </a>
+                    <a href="">
+                        <img style='inline;' src="images/icons/twitter_16.png" alt="">
+                    </a>
+                </div>
+
+
+            </div>
+            <!--                nav-->
+            <div>
+                <ul class='nav clearfix'>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="">About me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <content>
+            <!--           往前-->
+            <div class="prev">
+                <img src="images/btn-prev.png" alt="">
+            </div>
+            <!--            輪播-->
+            <div class='outer'>
+                <div class='pos '>
+                    <img class='change bg' src="images/banner/01.jpg" alt="">
+                    <img class='change bg' src="images/banner/02.jpg" alt="">
+                    <img class='change bg' src="images/banner/03.jpg" alt="">
+                    <img class='change bg' src="images/banner/04.jpg" alt="">
+                    <img class='change bg' src="images/banner/05.jpg" alt="">
+                </div>
+            </div>
+            <!--            往後-->
+            <div class="next">
+                <img src="images/btn-next.png" alt="">
+            </div>
+
+
+
+
+
+            <div class="post">
+                <div class="wrapp">
+                    <h2>POST TITLE</h2>
+                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam</P>
+
+                    <p>Posted by Admin, Apr 14</p>
+                    <h3>12</h3>
+                </div>
+
+            </div>
+
+
+        </content>
+        <main class='clearfix'>
+            <div class="mainContent"><img src="images/posts/01.jpg" alt="">
+                <div class="bottomText"></div>
+                <p>Comics, Movies, Latest Launchs, Lorem Ipsum Category</p>
+                <div class="mainText">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Posted by Admin, Apr 14</h4><img src="images/bg-post-content.png" alt="" style="position:absolute; right: -1%;bottom: -26%;"></div>
+            </div>
+            <div class="mainContent"><img src="images/posts/02.jpg" alt="">
+                <div class="bottomText"></div>
+                <p>Comics, Movies, Latest Launchs, Lorem Ipsum Category</p>
+                <div class="mainText">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Posted by Admin, Apr 14</h4><img src="images/bg-post-content.png" alt="" style="position:absolute; right: -1%;bottom: -26%;"></div>
+            </div>
+            <div class="mainContent"><img src="images/posts/03.jpg" alt="">
+                <div class="bottomText"></div>
+                <p>Comics, Movies, Latest Launchs, Lorem Ipsum Category</p>
+                <div class="mainText">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Posted by Admin, Apr 14</h4><img src="images/bg-post-content.png" alt="" style="position:absolute; right: -1%;bottom: -26%;"></div>
+            </div>
+            <div class="mainContent"><img src="images/posts/04.jpg" alt="">
+                <div class="bottomText"></div>
+                <p>Comics, Movies, Latest Launchs, Lorem Ipsum Category</p>
+                <div class="mainText">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Posted by Admin, Apr 14</h4><img src="images/bg-post-content.png" alt="" style="position:absolute; right: -1%;bottom: -26%;"></div>
+                <img style='position:absolute;    right: -0.1em;
+    bottom: -1em;' src="images/content-page-curl.jpg" alt="">
+            </div>
+
+        </main>
+        <footer>
+            <div class="footer_pages">
+                <h6>CATEGORIES</h6>
+                <div class="footer_pages_content">
+                    <ul>
+                        <li><img src="./images/arrow.png" style="display: none;">Lorem ipsum dolor sit amet</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Consectetur adipisicing elit</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Sed do eiusmod tempor</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Incididunt ut labore</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Et dolore magna aliqua</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Ut enim ad minim veniam</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Lorem ipsum</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Dolor sit amet</li>
+                        <li><img src="./images/arrow.png" style="display: none;">Consectetur adipisicing</li>
+                    </ul>
+                    <img src="./images/widget-curl.jpg">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
