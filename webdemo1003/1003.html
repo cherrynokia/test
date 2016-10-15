@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第五周切版1016</title>
+    <!--    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>-->
+    <script src='https://code.jquery.com/jquery-3.0.0.min.js'></script>
+    <style>
+        div,
+        li,
+        ul,
+        p,
+        h1,
+        h2,
+        html,
+        body,
+        img {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: url(images/bg.png)
+        }
+        
+        .container {
+            background: rgba(151, 130, 130, 0.8);
+            width: 80%;
+            margin: auto;
+        }
+        
+        .home {
+            width: 100%;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .bigLogo {
+            text-align: center;
+        }
+        
+        .bigLogo img {
+            margin-top: 3%;
+            width: 40%;
+        }
+        
+        .clearfix {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+        
+        .nav {
+            position: relative;
+        }
+        
+        .nav ul {
+            margin-top: 2em;
+        }
+        
+        .nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        .nav ul li:first-child a {
+            font-size: 40px;
+        }
+        
+        .nav ul li:not(:first-child) {
+            position: relative;
+            float: right;
+            top: 20px;
+        }
+        
+        .nav ul li:not(:first-child) a.active {
+            color: limegreen;
+        }
+        
+        .nav ul li:not(:first-child) a:active {
+            color: limegreen;
+        }
+        
+        .nav ul li:not(:first-child) a:hover {
+            color: limegreen;
+        }
+        
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .line {
+            width: 98%;
+            height: 3px;
+            background: white;
+            margin: 1px auto;
+        }
+        
+        .dynamic {
+            width: 60%;
+            overflow: hidden;
+            margin: 7px;
+            border: 3px solid white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .gallery_bar {
+            position: relative;
+            width: 400%;
+        }
+        
+        .gallery {
+            width: 25%;
+            display: inline-block;
+            float: left;
+            position: relative;
+        }
+        
+        .gallery img {
+            width: 100%;
+        }
+        
+        .motionLess {
+            width: 35%;
+            position: relative;
+            display: inline-block;
+            top: -2em;
+            border: 3px solid white;
+        }
+        
+        .motionLess img {
+            width: 100%;
+        }
+        
+        .circle {
+            position: absolute;
+        }
+        
+        .slider {
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+            margin: auto;
+            display: inline-block;
+        }
+        
+        .slider_bar {
+            position: relative;
+            width: 200%;
+            margin-top: 1em;
+            text-align: left;
+        }
+        
+        .slider_content {
+            position: relative;
+            width: 11%;
+            display: inline-block;
+            margin: 2px;
+            border: 2px solid black;
+        }
+        
+        .slider_content img {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            vertical-align: bottom;
+        }
+        
+        .prev,
+        .next {
+            font-size: 60px;
+            display: inline-block;
+            bottom: 17px;
+            position: relative;
+        }
+        
+        .prev:hover,
+        .next:hover {
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .footer {
+            text-align: center;
+        }
+        
+        .skin_care {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            display: none;
+        }
+        
+        .skin_gallery {
+            width: 95%;
+        }
+        
+        .skin_gallery img {
+            width: 21%;
+            border: 3px solid black;
+            margin: 3px;
+        }
+        
+        .skin_care h1 {
+            margin: 30px
+        }
+        
+        .contact {
+            color: white;
+            padding: 30px;
+            text-align: center;
+            display: none;
+        }
+        
+        .contact_left {
+            width: 45%;
+            display: inline-block;
+        }
+        
+        .contact_left img {
+            width: 100%;
+            border: 3px solid white;
+        }
+        
+        .contact_right {
+            width: 45%;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .contact .contact_right img {
+            width: 100%;
+            visibility: hidden;
+        }
+        
+        .contact_right h1 {
+            position: absolute;
+            top: 0;
+        }
+        
+        .contact_right form {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .bottom {
+            background: rgba(151, 130, 130, 0.8);
+            width: 80%;
+            margin: 0px auto;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        
+        .bottom a {
+            color: white;
+        }
+    </style>
+    <script>
+        //           大圖 輪播圖
+        $(function () {
+            var timer = null;
+            var count = 0;
+            timer = setInterval(function () {
+                count++;
+                //                                console.log(count);
+                if (count == 4) {
+                    count = 1;
+                    $('.gallery_bar').css({
+                        left: '0'
+                    })
+                }
+                $('.gallery_bar').animate({
+                    left: '-=' + ($('.gallery').width())
+                })
+            }, 3000);
+            //        小圖輪播圖
+            var timer_footer = null;
+            $('.next').hover(function () {
+                timer_footer = setInterval(function () {
+
+                    if (parseInt($('.home_footer_bar').css('left')) < -($('.home_footer_content').width() * 4)) {
+                        $('.home_footer_bar').css('left', '0');
+                    } else {
+                        $('.home_footer_bar').stop().animate({
+                            left: '-=100'
+                        }, 300);
+                    }
+                }, 300);
+            }, function () {
+                clearInterval(timer_footer);
+            });
+            //往右跑
+            var moving = null;
+            $('.next').hover(function () {
+                moving = setInterval(function () {
+                    if (parseInt($('.slider_bar').css('left')) < -($('.slider_content').width() * 4)) {
+                        $('.slider_bar').css('left', '0');
+                    } else {
+                        $('.slider_bar').stop().animate({
+                            left: '-=50'
+                        }, 300);
+                    }
+                }, 200);
+            }, function () {
+                clearInterval(moving);
+            });
+            //            往左跑
+            var moving = null;
+            $('.prev').hover(function () {
+                moving = setInterval(function () {
+                    if (parseInt($('.slider_bar').css('left')) > 0) {
+                        $('.slider_bar').css({
+                            left: -($('.slider_content').width() * 4)
+                        });
+                    } else {
+                        $('.slider_bar').stop().animate({
+                            left: '+=50'
+                        }, 300);
+                    }
+                }, 200);
+            }, function () {
+                clearInterval(moving);
+            });
+
+            //            分業向下滑動
+            $('.nav ul li').click(function () {
+                var _this = $('.nav ul li a.active').html();
+                //alert(_this);
+                $(this).find('a').addClass('active').parent().siblings().find('a').removeClass('active');
+                switch ($(this).find('a').html()) {
+                case 'HOME':
+                    if (_this == 'SKIN CARE') {
+                        $('.home').insertBefore($('.skin_care')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.skin_care').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.skin_care').animate({
+                            top: $('.skin_care').height()
+                        }, function () {
+                            $('.skin_care').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    if (_this == 'CONTACT') {
+                        $('.home').insertBefore($('.contact')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.contact').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.contact').animate({
+                            top: $('.contact').height()
+                        }, function () {
+                            $('.contact').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    break;
+                case 'SKIN CARE':
+                    if (_this == 'HOME') {
+                        $('.skin_care').insertBefore($('.home')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.home').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.home').animate({
+                            top: $('.home').height()
+                        }, function () {
+                            $('.home').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    if (_this == 'CONTACT') {
+                        $('.skin_care').insertBefore($('.contact')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.contact').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.contact').animate({
+                            top: $('.contact').height()
+                        }, function () {
+                            $('.contact').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    break;
+                case 'CONTACT':
+                    if (_this == 'HOME') {
+                        $('.contact').insertBefore($('.home')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.home').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.home').animate({
+                            top: $('.home').height()
+                        }, function () {
+                            $('.home').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    if (_this == 'SKIN CARE') {
+                        $('.contact').insertBefore($('.skin_care')).css({
+                            display: 'block'
+                            , position: 'relative'
+                            , top: -$('.skin_care').height()
+                        }).animate({
+                            top: '0'
+                        });
+                        $('.skin_care').animate({
+                            top: $('.skin_care').height()
+                        }, function () {
+                            $('.skin_care').css({
+                                display: 'none'
+                            });
+                        });
+                    }
+                    break;
+                }
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class='header'></div>
+    <div class='container'>
+        <div class='bigLogo'> <img src="images/logo.png" alt=""> </div>
+        <div class='nav'>
+            <ul>
+                <li> <a href="">Bio Beauty Care</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">SKIN CARE</a></li>
+                <li><a href="" class='active'>HOME</a></li>
+            </ul>
+        </div>
+        <div class='line'></div>
+        <div class='home'>
+
+            <div class='dynamic'>
+                <div class='gallery_bar'>
+                    <div class='gallery'> <img src="images/home_gallery1.png" />
+                        <div class='caption'>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class='gallery'> <img src="images/home_gallery2.png" />
+                        <div class='caption'>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class='gallery'> <img src="images/home_gallery3.png" />
+                        <div class='caption'>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class='gallery'> <img src="images/home_gallery1.png" />
+                        <div class='caption'>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='motionLess'> <img src="images/home_right.png" alt=""> </div>
+
+            <div class='footer'>
+                <div class='prev'>
+                    < </div>
+                        <div class='slider'>
+
+                            <div class='slider_bar'>
+                                <div class='slider_content'> <img src="images/home_footer1.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer2.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer3.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer4.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer1.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer2.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer3.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                                <div class='slider_content'> <img src="images/home_footer4.png" alt="">
+                                    <div class='cover'></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class='next'> > </div>
+                        <div class='info'></div>
+                </div>
+            </div>
+            <div class="skin_care">
+                <h1>SKIN CARE</h1>
+                <div class="skin_gallery">
+                    <img src="./images/home_footer1.png" />
+                    <img src="./images/home_footer2.png" />
+                    <img src="./images/home_footer3.png" />
+                    <img src="./images/home_footer4.png" />
+                    <img src="./images/home_footer1.png" />
+                    <img src="./images/home_footer2.png" />
+                    <img src="./images/home_footer3.png" />
+                    <img src="./images/home_footer4.png" />
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact_left">
+                    <img src="./images/contact.png" />
+                </div>
+                <div class="contact_right">
+                    <img src="./images/contact.png" />
+                    <h1>CONTACT US</h1>
+                    <form>
+                        <input type="text" value="Name" />
+                        <input type="text" value="Email" />
+                        <input type="text" value="Subject" />
+                        <input type="text" value="Massage" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--        fb twiter-->
+        <div class='bottom'>
+            <p>© 2023 by Organic Skin Care. Proudly created with <a href="#">Wix.com</a></p>
+        </div>
+</body>
+
+</html>
