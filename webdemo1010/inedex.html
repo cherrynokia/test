@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>105/10/10第五周主題</title>
+</head>
+<style>
+    ul,
+    li,
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav {
+        width: 5em;
+        margin: auto;
+        position: fixed;
+        right: 21px;
+        top: 50%;
+        z-index: 2;
+        transform: translateY(-50%);
+    }
+    
+    .nav ul li img {
+        position: relative;
+        width: 20px;
+        cursor: pointer;
+        top: 4px;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .nav ul li {
+        position: relative;
+        right: 5px;
+        top: 3px;
+        height: 27px;
+        overflow: hidden;
+        margin: 6px;
+    }
+    
+    .outer img {
+        left: 34px;
+        position: relative;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    [class*=contain] {
+        position: relative;
+        width: 1263px;
+        height: 895px;
+        overflow: hidden;
+    }
+    
+    .contain_1 {
+        position: relative;
+        width: 1263px;
+        height: 859px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .bg {
+        position: absolute;
+    }
+    
+    .one_person {
+        position: absolute;
+        top: 188px;
+    }
+    
+    .logo {
+        position: absolute;
+        top: 80px;
+        left: 100px;
+    }
+    
+    .caption {
+        position: absolute;
+    }
+    
+    .banner {
+        position: absolute;
+        background: white;
+        position: absolute;
+        width: 45%;
+        height: 100%;
+        right: 109px;
+        transform: skewX(-15deg);
+    }
+    
+    .caption {
+        position: absolute;
+        bottom: 300px;
+        left: 105px;
+        z-index: 1;
+    }
+    
+    .gallery {
+        position: absolute;
+        top: 200px;
+        left: 50px;
+        width: 473px;
+        height: 210px;
+        overflow: hidden;
+        transform: skewX(15deg);
+    }
+    
+    .info {
+        position: absolute;
+        bottom: 160px;
+        left: 70px;
+        width: 400px;
+        transform: skewX(5deg);
+        line-height: 25px;
+    }
+    
+    .contain_2 .two_person {
+        position: absolute;
+        right: -100px;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .contain_2 .spark {
+        position: absolute;
+        bottom: 0px;
+        right: -300px;
+        z-index: 1;
+    }
+    
+    .contain_2 .banner {
+        background: white;
+        position: absolute;
+        width: 55%;
+        height: 100%;
+        left: 110px;
+        transform: skewX(-15deg);
+        z-index: 0;
+        box-shadow: 0 0 10px gray;
+    }
+    
+    .contain_2 .banner .content1 {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        transform: skewX(10deg);
+    }
+    
+    .contain_2 .banner .content1 h1 {
+        font-size: 50px;
+        color: orange;
+    }
+    
+    .contain_2 .banner .content2 {
+        position: absolute;
+        left: 100px;
+        top: 250px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_2 .banner .content2 h1 {
+        color: dodgerblue;
+    }
+    
+    .contain_2 .banner .content2 p {
+        width: 300px;
+        line-height: 25px;
+    }
+    
+    button {
+        width: 170px;
+        background: orange;
+        color: white;
+        height: 50px;
+        font-size: 25px;
+        border: none;
+        border-radius: 10px;
+        transform: skewX(-15deg);
+        cursor: pointer;
+        font-weight: bold;
+        margin: 5px;
+    }
+    
+    .contain_2 .banner .content2 img {
+        position: absolute;
+        right: -250px;
+        top: 0px;
+    }
+    
+    .contain_2 .banner .content3 {
+        position: absolute;
+        left: 100px;
+        bottom: 100px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_2 .banner .content3 h1 {
+        color: dodgerblue;
+    }
+    
+    .contain_2 .banner .content3 p {
+        width: 200px;
+        line-height: 25px;
+    }
+    
+    .contain_2 .banner .content3>img:first-of-type {
+        position: absolute;
+        right: -100px;
+        top: 80px;
+        transform: scale(0.7);
+        z-index: 1;
+    }
+    
+    .contain_3 .three_person_1 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+    
+    .contain_3 .three_person_2 {
+        position: absolute;
+        right: -80px;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .contain_3 .three_person_3 {
+        position: absolute;
+        left: 130px;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .contain_3 .banner {
+        background: white;
+        position: absolute;
+        width: 45%;
+        height: 100%;
+        right: 50px;
+        transform: skewX(-15deg);
+        z-index: 0;
+        box-shadow: 0 0 10px gray;
+    }
+    
+    .contain_3 .banner .content {
+        position: absolute;
+        left: 100px;
+        bottom: 200px;
+        transform: skewX(10deg);
+    }
+    
+    .contain_3 .banner .content h1 {
+        color: dodgerblue;
+    }
+    
+    .contain_3 .banner .content p {
+        width: 200px;
+    }
+    
+    .contain_4 .banner {
+        background: white;
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        left: 120px;
+        transform: skewX(-15deg);
+        z-index: 0;
+        box-shadow: 0 0 10px gray;
+    }
+    
+    .contain_4 .banner .content {
+        position: absolute;
+        left: 50px;
+        top: 150px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_4 .banner .content h1 {
+        color: dodgerblue;
+    }
+    
+    .contain_4 .banner .content p {
+        width: 300px;
+    }
+    
+    .contain_4 .banner .mission {
+        position: absolute;
+        right: 200px;
+        top: 150px;
+    }
+    
+    .contain_4 .banner .mission ul li {
+        position: relative;
+        transform: skewX(15deg);
+    }
+    
+    .contain_4 .banner .mission ul li:not(:first-of-type) {
+        margin-top: 120px;
+    }
+    
+    .contain_4 .banner .mission ul li .label {
+        width: 101px;
+        height: 40px;
+        overflow: hidden;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(2) .label img {
+        position: relative;
+        top: -40px;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(3) .label img {
+        position: relative;
+        top: -80px;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(4) .label img {
+        position: relative;
+        top: -120px;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(2) .mask img {
+        position: relative;
+        top: -113px;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(3) .mask img {
+        position: relative;
+        top: -226px;
+    }
+    
+    .contain_4 .banner .mission ul li:nth-of-type(4) .mask img {
+        position: relative;
+        top: -339px;
+    }
+    
+    .contain_4 .banner .mission ul li .vedio {
+        position: absolute;
+        top: 25px;
+        left: -20px;
+    }
+    
+    .contain_4 .banner .mission ul li:hover .mask {
+        display: block;
+    }
+    
+    .contain_4 .banner .mission ul li .mask {
+        position: absolute;
+        top: 27px;
+        left: -18px;
+        height: 113px;
+        overflow: hidden;
+        display: none;
+        cursor: pointer;
+    }
+    
+    .contain_4 .four_person {
+        position: absolute;
+        left: 0px;
+        bottom: -4px;
+        z-index: 1;
+    }
+    
+    .contain_5 .banner {
+        background: white;
+        position: absolute;
+        width: 35%;
+        height: 100%;
+        right: 200px;
+        transform: skewX(-15deg);
+        z-index: 0;
+        box-shadow: 0 0 10px gray;
+    }
+    
+    .contain_5 .banner .content {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_5 .banner .content h1 {
+        color: dodgerblue;
+    }
+    
+    .contain_5 .banner .content p {
+        width: 250px;
+    }
+    
+    .contain_5 .banner .attachment {
+        position: absolute;
+        left: 50px;
+        top: 360px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_5 .banner .vedio {
+        position: absolute;
+        bottom: 130px;
+        left: 70px;
+        width: 318px;
+        height: 148px;
+        overflow: hidden;
+        transform: skewX(15deg);
+    }
+    
+    .contain_5 .banner .vedio img {
+        position: relative;
+    }
+    
+    .contain_5 .five_person {
+        position: absolute;
+        left: -170px;
+        bottom: -50px;
+    }
+    
+    .contain_6 .banner {
+        background: white;
+        position: absolute;
+        width: 35%;
+        height: 100%;
+        right: 200px;
+        transform: skewX(-15deg);
+        z-index: 0;
+        box-shadow: 0 0 10px gray;
+    }
+    
+    .contain_6. banner .content {
+        position: absolute;
+        left: 50px;
+        top: 150px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_6 .banner .content p {
+        width: 350px;
+        font-size: 20px;
+    }
+    
+    .contain_6 .banner .attachment {
+        position: absolute;
+        left: 50px;
+        top: 300px;
+        transform: skewX(15deg);
+    }
+    
+    .contain_6 .banner .attachment span {
+        position: relative;
+        left: 0;
+        top: -120px;
+        font-size: 30px;
+        color: dodgerblue;
+        font-weight: bold;
+    }
+    
+    .contain_6 .banner .attachment2 {
+        position: absolute;
+        left: 50px;
+        bottom: 200px;
+        transform: skewX(20deg);
+    }
+    
+    .contain_6 .banner .attachment2 p {
+        color: dodgerblue;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    
+    .contain_6 .banner .attachment2 button {
+        background: dodgerblue;
+    }
+    
+    .contain_6 .six_person {
+        position: absolute;
+        left: 0px;
+        bottom: -10px;
+        z-index: 1;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+<script src="//cdn.bootcss.com/jquery-mousewheel/3.1.10/jquery.mousewheel.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var num_li = 6; //偵測我們有幾個標點（圖片）
+        console.log(num_li);
+
+        //滾動滑鼠滾輪時，移動到上一頁、下一頁的效果
+        n = 1
+        moving = 0
+        $(window).mousewheel(function (e) {
+            $("html,body").stop()
+            if (moving == 0) {
+                moving = 1
+                if (e.deltaY == -1) {
+                    if (n < num_li) {
+                        n++
+                    }
+                } else {
+                    if (n > 1) {
+                        n--
+                    }
+                }
+            }
+            $("html,body").animate({
+                "scrollTop": $(".contain_" + n).offset().top
+            }, function () {
+                moving = 0
+            })
+            console.log(n)
+        })
+
+        //點選右方導覽列時會到指定圖片
+        for (i = 0; i <= 6; i++) {
+            $(".nav li img:eq(" + i + ")").click({
+                id: i
+            }, function (e) {
+                $("html,body").stop()
+                $(this).css('top', '-32px').animate({
+                        width: '27px'
+                    }) //除了被點擊到的游標，其他都恢復成原來的顏色
+                page = e.data.id
+                $("html,body").animate({
+                    "scrollTop": $(".contain_" + page).offset().top
+                })
+                $(this).parent().siblings().find('img').css('top', '4px').stop().animate({
+                        width: '20px'
+                    }) //被點擊到的游標變色，前面的selector用this也可以
+                n = e.data.id
+
+                console.log(page)
+            });
+            $('body').stop().animate({
+                scrollTop: $('body>div').eq($(this).parent().index()).offset().top
+            });
+        }
+
+
+
+
+        //滑鼠滾輪可以移動到指定頁面
+        $(window).scroll(function () {
+            if ($('body').scrollTop() >= $('.contain_1').offset().top && $('body').scrollTop() < $('.contain_2').offset().top) {
+                $('.outer li').eq(0).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            } else if ($('body').scrollTop() >= $('.contain_2').offset().top && $('body').scrollTop() < $('.contain_3').offset().top) {
+                $('.outer li').eq(1).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            } else if ($('body').scrollTop() >= $('.contain_3').offset().top && $('body').scrollTop() < $('.contain_4').offset().top) {
+                $('.outer li').eq(2).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            } else if ($('body').scrollTop() >= $('.contain_4').offset().top && $('body').scrollTop() < $('.contain_5').offset().top) {
+                $('.outer li').eq(3).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            } else if ($('body').scrollTop() >= $('.contain_5').offset().top && $('body').scrollTop() < $('.contain_6').offset().top) {
+                $('.outer li').eq(4).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            } else {
+                $('.outer li').eq(5).find('img').css('top', '-32px').stop().animate({
+                    width: '27px'
+                }).parent().siblings().find('img').css('top', '4px').stop().animate({
+                    width: '20px'
+                });
+            }
+
+        });
+
+
+        //        滑鼠左右移動 背景跟著動
+        for (i = 1; i < 7; i++) {
+            $('.contain_' + i).mousemove(function (e) {
+                var per = parseInt(-(e.pageX / $(this).width()) * 10);
+                $(this).find('img.bg').stop().animate({
+                    left: per + '%'
+                , }, 'fast');
+                $(this).find('div.one_person').stop().animate({
+                    left: -per + 'px'
+                , }, 'fast');
+            });
+
+        }
+
+
+    });
+</script>
+
+
+<body>
+    <div class='nav'>
+        <li><img src="images/navigation_logo.png" alt=""></li>
+        <div class='outer' style=' position:relative;'>
+            <p><img src="images/navigation_bg.png" alt="" style='position:absolute; height: 220px;
+    left: 23px; top: -6px;'></p>
+            <ul style=''>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+                <li><img src="images/navigation_dot.png" alt=""></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!--   第一頁-->
+    <div class="contain_1">
+        <img class="bg" src="./images/1_page_bg.jpg" />
+        <div class="one_person">
+            <img src="images/1_page_person.png" />
+            <img class="one_person_light" src="./images/1_page_person_light.png" style='left: 20px;
+    top: 0;' />
+        </div>
+        <div class="logo">
+            <img src="./images/1_page_logo.png" />
+        </div>
+        <div class="caption">
+            <img src="./images/1_page_caption-white.png" />
+            <img src="./images/1_page_caption-blue.png" />
+        </div>
+        <div class="banner">
+            <div class="gallery">
+                <img src="./images/1_page_gallery.jpg" />
+            </div>
+            <div class="info">
+                『鬥陣特攻』是一款快節奏的第一人稱射擊遊戲，共有22個角色。每個人有獨特的武器與技能。搭配戰場任務，讓你每次遊戲都有不同的遊戲體驗!再正式開始前，有些事你得先了解，才能快速進入遊戲，並且活的久一點。讓士兵76告訴你們<span>捍衛教戰守則!</span>
+            </div>
+        </div>
+    </div>
+    <!--    第二頁-->
+    <div class="contain_2">
+        <img class="bg" src="./images/2_page_bg.jpg" />
+        <div class="two_person">
+            <img src="./images/2_page_person.png" />
+        </div>
+        <img class="spark" src="./images/2_page_spark.png" />
+        <div class="banner">
+            <div class="content1">
+                <h1>捍衛者教戰守則</h1>
+            </div>
+            <div class="content2">
+                <h1>守則1 下載應用程式</h1>
+                <p>工欲善其事，並先利其器!</p>
+                <p>想成為捍衛者，首先你得安裝Battle.net應用程式，才能在現實世界/『鬥陣特攻』之間快速轉換。</p>
+                <button>免費下載</button>
+                <img src="./images/2_page_attchment1.png" />
+            </div>
+            <div class="content3">
+                <h1>守則2 創建帳號</h1>
+                <p>身為捍衛者，除了身手敏捷之外，響亮的名號也是很重要的!這樣拿下精彩重播時，帥度硬是比別人多一級</p>
+                <button>馬上建立</button>
+                <img src="./images/2_page_attchment2.png" />
+
+            </div>
+        </div>
+    </div>
+    <!--    第三頁-->
+    <div class="contain_3">
+        <img class="bg" src="./images/3_page_bg.jpg" />
+        <div class="three_person_1">
+            <img src="./images/3_page_person1.png" />
+        </div>
+        <div class="three_person_2">
+            <img src="./images/3_page_person2.png" />
+        </div>
+        <div class="three_person_3">
+            <img src="./images/3_page_person3.png" />
+        </div>
+        <div class="banner">
+            <div class="content">
+                <h1>守則3 知己知彼 克敵制勝</h1>
+                <p>『鬥陣特攻』裡，每個英雄都有自己獨特的武器與技能，必須先了解英雄特色，才能在與敵人交戰時做出正確判斷，取得勝利。</p>
+                <button>認識英雄</button>
+                <br/>
+                <button>實況進階教學</button>
+            </div>
+        </div>
+    </div>
+    <!--page four-->
+    <div class="contain_4">
+        <img class="bg" src="./images/4_page_bg.jpg" />
+        <div class="four_person">
+            <img src="./images/4_page_person.png" />
+        </div>
+        <div class="banner">
+            <div class="content">
+                <h1>守則4 任務優先</h1>
+                <p>每場戰鬥都有不同的任務，有時要護送目標、有時要佔領區域，有時要進行防守。擊殺次數多不一定就會勝利，因此了解每個戰場的任務是重要的！必要時，甚至必須以生命完成目的。</p>
+            </div>
+            <div class="mission">
+                <ul>
+                    <li>
+                        <div class="label"><img src="./images/4_page_label.png" /></div>
+                        <div class="vedio"><img src="./images/4_page_video1.png" /></div>
+                        <div class="mask"><img src="./images/4_page_hover.png" /></div>
+                    </li>
+                    <li>
+                        <div class="label"><img src="./images/4_page_label.png" /></div>
+                        <div class="vedio"><img src="./images/4_page_video2.png" /></div>
+                        <div class="mask"><img src="./images/4_page_hover.png" /></div>
+                    </li>
+                    <li>
+                        <div class="label"><img src="./images/4_page_label.png" /></div>
+                        <div class="vedio"><img src="./images/4_page_video3.png" /></div>
+                        <div class="mask"><img src="./images/4_page_hover.png" /></div>
+                    </li>
+                    <li>
+                        <div class="label"><img src="./images/4_page_label.png" /></div>
+                        <div class="vedio"><img src="./images/4_page_video4.png" /></div>
+                        <div class="mask"><img src="./images/4_page_hover.png" /></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--page five-->
+    <div class="contain_5">
+        <img class="bg" src="./images/5_page_bg.jpg" />
+        <div class="five_person">
+            <img src="./images/5_page_person.png" />
+        </div>
+        <div class="banner">
+            <div class="content">
+                <h1>守則5 實戰磨練</h1>
+                <p>了解所有的守則之後，最重要的還是實戰練習！立刻購買遊戲進入『鬥陣特攻』磨練戰技，捍衛這個世界。</p>
+                <button>立即購買</button>
+                <br/>
+            </div>
+            <div class="attachment">
+                <img src="./images/5_page_attachment.png" />
+            </div>
+            <div class="vedio">
+                <img src="./images/5_page_vedio.png" />
+            </div>
+        </div>
+    </div>
+    <!--page six-->
+    <div class="contain_6">
+        <img class="bg" src="./images/6_page_bg.jpg" />
+        <div class="six_person">
+            <img src="./images/6_page_person.png" />
+        </div>
+        <div class="banner">
+            <div class="content">
+                <p>了解教戰守則的你，已經是個合格的捍衛者了；透過以下方法，尋找更多捍衛者一起並肩作戰！</p>
+            </div>
+            <div class="attachment">
+                <span>加入捍衛者</span>
+                <img src="./images/6_page_attachment.png" />
+            </div>
+            <div class="attachment2">
+                <p>召集朋友加入</p>
+                <button>分享教戰守則</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
