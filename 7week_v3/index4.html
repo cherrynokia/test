@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <!--   參考連結http://www.visithumboldt.com/-->
+    <title>webdemo1024</title>
+    <meta charset=utf-8>
+    <style>
+    body {
+            margin: 0;
+            background: transparent;
+        }
+        
+        video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background: url(002.mp4);
+            background-size: cover;
+        }
+        
+        #polina {
+            font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+            font-weight: 100;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 2rem;
+            width: 33%;
+            margin: 2rem;
+            float: right;
+            font-size: 1.2rem;
+        }
+        
+        #polina button {
+            display: block;
+            width: 80%;
+            padding: .4rem;
+            border: none;
+            margin: 1rem auto;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, .23);
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            -webkit-transition: .3s background;
+            transition: .3s background;
+        }
+        
+        #polina button:hover {
+            background: rgba(0, 0, 0, .5)
+        }
+        
+        @media screen and (max-width: 500px) {
+            #polina {
+                width: 50%;
+            }
+        }
+        
+        .stopfade {
+            opacity: .8
+        }
+        
+        .pseudo-centered-content {
+            display: inline-block;
+            font-size: 1.125rem;
+            position: absolute;
+            color: #fff;
+            top: 50%;
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            display: block;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            text-transform: uppercase;
+        }
+        
+        .pseudo-centered-content h1 {
+            font-size: 3rem;
+            letter-spacing: 3px;
+            line-height: 1.1em;
+        }
+        
+        .pseudo-centered-content h2 {
+            padding: 0 100px;
+            font-size: 25px;
+            font-size: 1.5625rem;
+            line-height: 35px;
+            line-height: 2.1875rem;
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            font-family: 'brandon-grotesque', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: rgba(240, 240, 240, 0.8);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="pseudo-centered-content">
+        <h1>Welcome to Humboldt County</h1>
+        <h2>Ours is a world unlike any other.<br> Explore incredible destinations<br> and plan your vacation now.</h2>
+    </div>
+
+    <video autoplay loop poster="Home-_-Persona-page-loading-image-1280x_.jpg" id="bgvideo" width="800" height="480">
+        <source src="002.mp4" type="video/mp4">
+    </video>
+    <div id="polina">
+        <h1>POLINA</h1>
+        <p>filmed by Alexander Wagner 2011</p>
+        <button>Pause</button>
+    </div>
+
+
+
+</body>
+<script>
+    var video = document.getElementById("bgvideo")
+        , pauseButton = document.querySelector("#polina button");
+
+    function vidFade() {
+        video.classList.add("stopfade");
+    }
+    //        video結束用後 影片要停止和變淡
+    video.addEventListener('ended', function () {
+        video.pause();
+        vidFade();
+    }, false);
+    //        但按下影片停止鍵 讓video變淡
+    pauseButton.addEventListener("click", function () {
+        video.classList.toggle("stopfade");
+        if (video.paused) {
+            video.play();
+            pauseButton.innerHTML = "Pause";
+        } else {
+            video.pause();
+            pauseButton.innerHTML = "Play";
+        }
+    }, false);
+    //        touchstart事件：当手指触摸屏幕时候触发，即使已经有一个手指放在屏幕上也会触发。
+    video.addEventListener('touchstart', function (e) {
+        //        不要有任何動作發生 單純地影片撥放
+        e.preventDefault();
+        video.play();
+    })
+</script>
+
+</html>
